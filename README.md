@@ -1,10 +1,10 @@
 # URLPattern polyfill
 
-This module is a polyfill implementing the [`URLPattern` web
-API](https://github.com/WICG/urlpattern) api in wasm and js. We use the crate
-[rust-urlpattern](https://github.com/denoland/rust-urlpattern) from
-[denoland](https://github.com/denoland/rust-urlpattern) which is the same as is
-used internally in the deno runtime.
+This module is a polyfill implementing the
+[`URLPattern` web API](https://github.com/WICG/urlpattern) api in wasm and js.
+We use the crate [rust-urlpattern](https://github.com/denoland/rust-urlpattern)
+from [denoland](https://github.com/denoland/rust-urlpattern) which is the same
+as is used internally in the deno runtime.
 
 The module works both in deno (for when the `unstable` flag is not passed as is
 the case until the deno api is stabilized) and in the browser.
