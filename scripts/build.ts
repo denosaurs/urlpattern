@@ -1,6 +1,6 @@
-import { encode } from "https://deno.land/std@0.106.0/encoding/base64.ts";
+import { encode } from "https://deno.land/std@0.120.0/encoding/base64.ts";
 import { compress } from "https://deno.land/x/lz4@v0.1.2/mod.ts";
-import { minify } from "https://jspm.dev/terser@5.7.2";
+import { minify } from "https://jspm.dev/terser@5.10.0";
 
 const name = "urlpattern";
 
@@ -12,7 +12,7 @@ const wasm = await Deno.readFile(`./pkg/${name}_bg.wasm`);
 const init = await Deno.readTextFile(`./pkg/${name}.js`);
 const encoded = encode(compress(wasm));
 const source =
-  `import { decode } from "https://deno.land/std@0.106.0/encoding/base64.ts";
+  `import { decode } from "https://deno.land/std@0.120.0/encoding/base64.ts";
 import { decompress } from "https://deno.land/x/lz4@v0.1.2/mod.ts";
 export const source = decompress(decode("${encoded}"));
 ${init}`;
